@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Upload, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { UploadDialog } from "@/components/UploadDialog";
 
 export const Hero = () => {
+  const emailAddress = "hello@metahuman.me";
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
       {/* Animated background */}
@@ -25,18 +28,13 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <Button 
-            size="lg" 
-            className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground glow-primary transition-all duration-300"
-          >
-            <Upload className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-            Upload Your Video
-          </Button>
+          <UploadDialog />
           
           <Button 
             size="lg" 
             variant="outline"
             className="border-primary/50 hover:bg-primary/10 hover:border-primary transition-all duration-300"
+            onClick={() => window.location.href = `mailto:${emailAddress}`}
           >
             <Mail className="mr-2 h-5 w-5" />
             Email Instead

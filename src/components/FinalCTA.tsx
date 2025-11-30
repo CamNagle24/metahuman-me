@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Upload, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { UploadDialog } from "@/components/UploadDialog";
 
 export const FinalCTA = () => {
   const emailAddress = "hello@metahuman.me";
@@ -15,13 +16,7 @@ export const FinalCTA = () => {
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button 
-            size="lg"
-            className="group bg-primary hover:bg-primary/90 text-primary-foreground glow-primary transition-all duration-300 text-lg px-8 py-6"
-          >
-            <Upload className="mr-2 h-6 w-6 group-hover:scale-110 transition-transform" />
-            Upload Your Video
-          </Button>
+          <UploadDialog />
           
           <span className="text-muted-foreground text-lg font-display">or</span>
           
