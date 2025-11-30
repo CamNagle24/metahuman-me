@@ -57,7 +57,7 @@ export const ComparisonFlip = () => {
                 playsInline
                 className="w-full h-full object-cover"
               >
-                <source src="/original.mov" type="video/mov" />
+                <source src="/original.mov" type="video/quicktime" />
               </video>
             </div>
             
@@ -101,7 +101,7 @@ export const ComparisonFlip = () => {
                 playsInline
                 className="w-full h-full object-cover"
               >
-                <source src="/metahuman.MOV" type="video/MOV" />
+                <source src="/metahuman.MOV" type="video/quicktime" />
               </video>
             </div>
             
