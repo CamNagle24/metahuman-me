@@ -38,8 +38,12 @@ export const ComparisonFlip = () => {
                 muted 
                 playsInline
                 className="w-full h-full object-cover"
+                onError={(e) => console.error('Original video error:', e)}
+                onLoadedData={() => console.log('Original video loaded')}
               >
                 <source src="/original.MOV" type="video/quicktime" />
+                <source src="/original.mov" type="video/quicktime" />
+                <source src="/original.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -65,8 +69,12 @@ export const ComparisonFlip = () => {
                 muted 
                 playsInline
                 className="w-full h-full object-cover"
+                onError={(e) => console.error('MetaHuman video error:', e)}
+                onLoadedData={() => console.log('MetaHuman video loaded')}
               >
                 <source src="/metahuman.MOV" type="video/quicktime" />
+                <source src="/metahuman.mov" type="video/quicktime" />
+                <source src="/metahuman.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
