@@ -33,7 +33,7 @@ export const ComparisonFlip = () => {
             <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
               {/* Image */}
               <img 
-                src="/original.jpg" 
+                src={`${import.meta.env.BASE_URL}original.jpg`}
                 alt="Before - Original person"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -59,7 +59,7 @@ export const ComparisonFlip = () => {
             <div className="relative w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20">
               {/* Image */}
               <img 
-                src="/metahuman.jpg" 
+                src={`${import.meta.env.BASE_URL}metahuman.jpg`}
                 alt="Before - Original person"
                 className="w-full h-full object-cover"
                 onError={(e) => {
