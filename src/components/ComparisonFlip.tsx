@@ -31,16 +31,27 @@ export const ComparisonFlip = () => {
             style={{ backfaceVisibility: 'hidden' }}
           >
             <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
-              {/* Image */}
-              <img 
-                src={`${import.meta.env.BASE_URL}original.jpg`}
-                alt="Before - Original person"
+              {/* Video */}
+              <video 
+                src={`${import.meta.env.BASE_URL}original.mp4`}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error('Failed to load /original.jpg');
+                  console.error('Failed to load original.mp4 - make sure the video is in the public folder');
+                  // Fallback: show placeholder text
                   e.currentTarget.style.display = 'none';
                 }}
               />
+              {/* Fallback content if video doesn't load */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-muted-foreground text-center px-4">
+                  [Original Video]<br/>
+                  <span className="text-xs">Place original.mp4 in public folder</span>
+                </p>
+              </div>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -57,16 +68,27 @@ export const ComparisonFlip = () => {
             }}
           >
             <div className="relative w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20">
-              {/* Image */}
-              <img 
-                src={`${import.meta.env.BASE_URL}metahuman.jpg`}
-                alt="Before - Original person"
+              {/* Video */}
+              <video 
+                src={`${import.meta.env.BASE_URL}metahuman.mp4`}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error('Failed to load /original.jpg');
+                  console.error('Failed to load original.mp4 - make sure the video is in the public folder');
+                  // Fallback: show placeholder text
                   e.currentTarget.style.display = 'none';
                 }}
               />
+              {/* Fallback content if video doesn't load */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-muted-foreground text-center px-4">
+                  [Original Video]<br/>
+                  <span className="text-xs">Place original.mp4 in public folder</span>
+                </p>
+              </div>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
