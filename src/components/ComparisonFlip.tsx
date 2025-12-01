@@ -16,22 +16,23 @@ export const ComparisonFlip = () => {
     <div className="w-full max-w-4xl mx-auto">
       <div className="perspective-1000">
         <Card 
-          className={`relative w-full aspect-video overflow-hidden transition-all duration-700 transform-style-3d cursor-pointer ${
-            isFlipped ? 'rotate-y-180' : ''
-          }`}
+          className="relative w-full aspect-video overflow-hidden cursor-pointer"
           onClick={() => setIsFlipped(!isFlipped)}
           style={{
             transformStyle: 'preserve-3d',
+            transition: 'transform 0.7s',
             transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
           }}
         >
           {/* Front - Original Person */}
           <div 
-            className="absolute inset-0 backface-hidden"
-            style={{ backfaceVisibility: 'hidden' }}
+            className="absolute inset-0"
+            style={{ 
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden'
+            }}
           >
             <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
-              {/* Video */}
               <video 
                 src={`${import.meta.env.BASE_URL}original.mp4`}
                 autoPlay
@@ -40,18 +41,10 @@ export const ComparisonFlip = () => {
                 playsInline
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error('Failed to load original.mp4 - make sure the video is in the public folder');
-                  // Fallback: show placeholder text
+                  console.error('Failed to load original.mp4');
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              {/* Fallback content if video doesn't load */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">
-                  [Original Video]<br/>
-                  <span className="text-xs">Place original.mp4 in public folder</span>
-                </p>
-              </div>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -61,14 +54,14 @@ export const ComparisonFlip = () => {
 
           {/* Back - MetaHuman */}
           <div 
-            className="absolute inset-0 backface-hidden"
+            className="absolute inset-0"
             style={{ 
               backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
             }}
           >
             <div className="relative w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20">
-              {/* Video */}
               <video 
                 src={`${import.meta.env.BASE_URL}metahuman.mp4`}
                 autoPlay
@@ -77,18 +70,10 @@ export const ComparisonFlip = () => {
                 playsInline
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error('Failed to load original.mp4 - make sure the video is in the public folder');
-                  // Fallback: show placeholder text
+                  console.error('Failed to load metahuman.mp4');
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              {/* Fallback content if video doesn't load */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">
-                  [Original Video]<br/>
-                  <span className="text-xs">Place original.mp4 in public folder</span>
-                </p>
-              </div>
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
