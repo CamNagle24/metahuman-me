@@ -31,21 +31,16 @@ export const ComparisonFlip = () => {
             style={{ backfaceVisibility: 'hidden' }}
           >
             <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20">
-              {/* Video */}
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
+              {/* Image */}
+              <img 
+                src="/original.jpg" 
+                alt="Before - Original person"
                 className="w-full h-full object-cover"
-                onError={(e) => console.error('Original video error:', e)}
-                onLoadedData={() => console.log('Original video loaded')}
-              >
-                <source src="/original.MOV" type="video/quicktime" />
-                <source src="/original.mov" type="video/quicktime" />
-                <source src="/original.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                onError={(e) => {
+                  console.error('Failed to load /original.jpg');
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -62,21 +57,16 @@ export const ComparisonFlip = () => {
             }}
           >
             <div className="relative w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20">
-              {/* Video */}
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
+              {/* Image */}
+              <img 
+                src="/metahuman.jpg" 
+                alt="Before - Original person"
                 className="w-full h-full object-cover"
-                onError={(e) => console.error('MetaHuman video error:', e)}
-                onLoadedData={() => console.log('MetaHuman video loaded')}
-              >
-                <source src="/metahuman.MOV" type="video/quicktime" />
-                <source src="/metahuman.mov" type="video/quicktime" />
-                <source src="/metahuman.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                onError={(e) => {
+                  console.error('Failed to load /original.jpg');
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
             </div>
             
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
